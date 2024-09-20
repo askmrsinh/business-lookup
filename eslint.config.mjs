@@ -1,13 +1,11 @@
-import globals from 'globals';
-import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import path from 'node:path';
-import { includeIgnoreFile } from '@eslint/compat';
 import { fileURLToPath } from 'node:url';
+import { includeIgnoreFile } from '@eslint/compat';
+import tseslint from 'typescript-eslint';
+import pluginJs from '@eslint/js';
+import globals from 'globals';
+import path from 'node:path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, '.gitignore');
+const gitignorePath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.gitignore');
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [

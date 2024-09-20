@@ -1,23 +1,22 @@
-import request from 'supertest';
-import { app, database, init, server } from '../server';
-import { DatabaseSeeder } from '../seeders';
-import { BusinessEntity } from '../entities';
+import type { BusinessEntity } from '../database/entities';
+import { DatabaseSeeder } from '../database/seeders';
 import { sphericalDistance } from '../utils';
+import { init, app, orm } from '../app';
+import request from 'supertest';
 
 describe('Discovery Controller', () => {
   beforeAll(async () => {
-    await init;
-    database.config.set('dbName', ':memory:');
-    database.config.getLogger().setDebugMode(false);
-    await database.config.getDriver().reconnect();
-    await database.migrator.up();
-    await database.seeder.seed(DatabaseSeeder);
+    await init();
+    orm.config.set('dbName', ':memory:');
+    orm.config.getLogger().setDebugMode(false);
+    await orm.config.getDriver().reconnect();
+    await orm.migrator.up();
+    await orm.seeder.seed(DatabaseSeeder);
   });
 
   afterAll(async () => {
-    await database.getSchemaGenerator().dropDatabase();
-    await database.close(true);
-    server.close();
+    await orm.getSchemaGenerator().dropDatabase();
+    await orm.close(true);
   });
 
   it('should return all businesses by default with name, latitude, longitude, and distance', async () => {

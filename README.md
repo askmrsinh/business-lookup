@@ -8,26 +8,25 @@ coordinate (latitude and longitude).
 <details>
 <summary>Table of Contents (click to expand)</summary>
 
-* [Express Node TS Project for Business Lookup API](#express-node-ts-project-for-business-lookup-api)
-    * [Getting Started](#getting-started)
-        * [Prerequisites](#prerequisites)
-        * [Installation](#installation)
-        * [Setting up the Database](#setting-up-the-database)
-        * [Running the Application](#running-the-application)
-    * [API Routes](#api-routes)
-        * [GET /discovery](#get-discovery)
-            * [Query Parameters](#query-parameters)
-            * [Response](#response)
-            * [Examples](#examples)
-            * [Error Handling](#error-handling)
-    * [Available Scripts](#available-scripts)
-    * [Technology Stack](#technology-stack)
-    * [Project Structure](#project-structure)
-    * [Testing](#testing)
+- [Express Node TS Project for Business Lookup API](#express-node-ts-project-for-business-lookup-api)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Setting up the Database](#setting-up-the-database)
+    - [Running the Application](#running-the-application)
+  - [API Routes](#api-routes)
+    - [GET /discovery](#get-discovery)
+      - [Query Parameters](#query-parameters)
+      - [Response](#response)
+      - [Examples](#examples)
+      - [Error Handling](#error-handling)
+  - [Available Scripts](#available-scripts)
+  - [Technology Stack](#technology-stack)
+  - [Project Structure](#project-structure)
+  - [Testing](#testing)
 
 </details>
 <!-- ⛔️ MD-MAGIC-EXAMPLE:END -->
-
 
 ## Getting Started
 

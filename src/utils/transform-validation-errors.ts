@@ -1,4 +1,4 @@
-import { ValidationError } from 'class-validator';
+import type { ValidationError } from 'class-validator';
 
 /**
  * Converts an array of ValidationError objects into a more user-friendly format.

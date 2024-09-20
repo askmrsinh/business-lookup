@@ -1,13 +1,12 @@
-import { defineConfig } from '@mikro-orm/core';
 import { BetterSqliteDriver } from '@mikro-orm/better-sqlite';
 import { SqlHighlighter } from '@mikro-orm/sql-highlighter';
 import { Migrator } from '@mikro-orm/migrations';
-import { logger } from './utils';
+import { defineConfig } from '@mikro-orm/core';
 
 export default defineConfig({
   driver: BetterSqliteDriver,
-  entities: ['./dist/entities'],
-  entitiesTs: ['./app/entities'],
+  entities: ['./dist/database/entities'],
+  entitiesTs: ['./src/database/entities'],
   dbName: '.data/app.sqlite',
   highlighter: new SqlHighlighter(),
   debug: false,
@@ -15,10 +14,9 @@ export default defineConfig({
   migrations: {
     fileName: (timestamp) => `migration-${timestamp}`,
     tableName: 'migrations',
-    path: './app/migrations'
+    path: './src/database/migrations'
   },
   seeder: {
-    path: './app/seeders'
-  },
-  loggerFactory: (options) => logger(options)
+    path: './src/database/seeders'
+  }
 });

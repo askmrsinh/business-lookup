@@ -1,0 +1,6 @@
+pnpm run format
+pnpm run lint --fix
+
+pnpm tsc
+
+pnpm run test

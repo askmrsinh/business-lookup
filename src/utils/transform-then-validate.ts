@@ -1,6 +1,8 @@
-import { ClassConstructor, ClassTransformOptions, plainToInstance } from 'class-transformer';
-import { ValidationError } from 'class-validator/types/validation/ValidationError';
-import { validateSync, ValidatorOptions as ClassValidatorOptions } from 'class-validator';
+import type { ClassConstructor, ClassTransformOptions } from 'class-transformer';
+import type { ValidatorOptions as ClassValidatorOptions } from 'class-validator';
+import type { ValidationError } from 'class-validator/types/validation/ValidationError';
+import { plainToInstance } from 'class-transformer';
+import { validateSync } from 'class-validator';
 import { CLASS_TRANSFORMER_OPTIONS, CLASS_VALIDATOR_OPTIONS } from '../constants';
 
 /**

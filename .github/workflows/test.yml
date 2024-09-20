@@ -1,0 +1,15 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    uses: ./.github/workflows/base.yml
+    with:
+      run_script: 'pnpm run test'

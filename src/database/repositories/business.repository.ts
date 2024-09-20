@@ -1,7 +1,12 @@
-import { EntityRepository, raw, SelectQueryBuilder } from '@mikro-orm/better-sqlite';
-import { BusinessEntity } from '../entities';
-import { EARTHS_RADIUS_IN_KM } from '../constants';
+import type { SelectQueryBuilder } from '@mikro-orm/better-sqlite';
+import type { BusinessEntity } from '../entities';
+import { EntityRepository } from '@mikro-orm/better-sqlite';
+import { EARTHS_RADIUS_IN_KM } from '../../constants';
+import { raw } from '@mikro-orm/better-sqlite';
 
+/**
+ * Specialized repository for managing business data with custom methods.
+ */
 export class BusinessRepository extends EntityRepository<BusinessEntity> {
   protected static readonly RADIUS = EARTHS_RADIUS_IN_KM;
 
